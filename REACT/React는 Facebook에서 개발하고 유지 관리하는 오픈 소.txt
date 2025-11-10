@@ -1,0 +1,125 @@
+React는 Facebook에서 개발하고 유지 관리하는 오픈 소스 JavaScript 라이브러리로,
+사용자 인터페이스(UI)를 구축하기 위해 사용됩니다.
+주로 단일 페이지 애플리케이션(SPA)에서 빠르고 효율적인 UI 업데이트를 위해 활용되며,
+컴포넌트 기반 구조로 UI를 재사용 가능한 단위로 나눌 수 있게 해줍니다.
+
+1. 컴포넌트 기반 아키텍처
+ - UI를 독립적이고 재사용 가능한 컴포넌트로 분할
+ - 각 컴포넌트는 고유한 상태(state)와 속성(props) 관리
+
+2. Virtual DOM
+ - 실제 DOM 대신 메모리 상에서 Virtual DOM을 생성
+ - 변경 사항을 실제 DOM과 비교하여 최소한의 변경만 적용 → 성능 향상
+
+3. 단방향 데이터 흐름
+ - 부모에서 자식 컴포넌트로만 데이터 흐름
+ - 예측 가능한 데이터 관리 가능
+
+4. JSX
+ - JavaScript와 HTML을 혼합한 문법
+ - HTML 유사 문법을 통해 가독성과 유지보수성 향상
+
+5. React Hooks
+ - 함수형 컴포넌트에서도 상태관리 및 생명주기 활용 가능
+ - 주요 Hook: useState, useEffect, useContext 등
+
+6. 풍부한 생태계
+ - Redux, React Router, Styled-Components 등 다양한 라이브러리와의 호환
+
+7. 서버사이드 렌더링(SSR)
+ - Next.js 등의 프레임워크를 통해 SSR 지원
+ - SEO 친화적이며 초기 로딩 속도 향상
+
+8. 지속적인 업데이트
+ - Facebook에 의해 관리되고 있어 꾸준한 성능 개선 및 커뮤니티 피드백 반영
+
+//===========01====================
+
+
+이해하기 쉬운 사진 개요- JSX (JavaScript XML)
+
+
+index.html: root -> index.js -> /app -> app.js
+
+ <React.StrictMode>, </React.StrictMode>,reportWebVitals(); 주석 ->  의미 없음
+
+//===========02====================
+
+ 
+<##새 파일(02) 만들기##>
+npx create-react-app 02
+
+git ignore 02 파일 추가
+-> 파일이동 + npm start
+
+
+jsx -> 자바 스크립트 안에서 html코드 넣기 -> html 를 react가 js로 허용?
+=> html 코드를 함수 형태로 js에 넣기 가능
+
+
+export : 외부 혀용가능
+class가 아니라 className으로 지정해야 함
+변수 처리 용도,  그 변수를 json 형태로(기본으로) 가져옴
+-> 걍 리엑트에선 중활호 2개 필요
+background-color => backgroundColor
+리엑트(jsx)에선 상위태그 (빈<>태그여도) 필요!
+
+컴포넌트  = 핸들러 + 상태 (상태 정보 저장은  HOOK 에서 함)
+
+index.html: root -> index.js -> /app -> app.js -> ./02JSX/01_BASIC -app.js: main
+
+
+
+
+jsx 자바 스크립트내 html 코드 랜더링 하기 위해 허용된 문법 체계
+
+const component  = () => {}
+return (
+<div className ="" ,style={{contSize : "25px"}}>
+html
+</>
+)
+
+//===========03====================
+MyComponent.jsx
+
+const [count,setCount] = useState(1) //count 초기값 == 0 //Setter 
+
+//최초 1회 실행(1회만 랜더링 이후 처리 Hook)
+    useEffect(()=>{
+        console.log("init setting")
+    },[])//[] => 감시할 상태 변수
+
+
+
+//===========05====================
+
+여러줄 -> () 필요	
+여러태그 <>(최소 빈태그 필요) 
+ex . (
+	 <>
+          	<p>로그인 완료</p>
+                <p>환영합니다</p>
+         </>
+       ) 
+
+//===========06====================
+REACT
+/ -> a(/about)http://localhost:3000 
+=> 새로 다시 요청됨(새로고침)
+
+=> a -> Link (import { Link } from "react-router-dom";)
+=> ##컴포넌트만 바꿈##
+
+
+//===========07====================
+provider> app + context  ==>전역화 가능
+app에서 컴포넌트간의 데이터 공유 가능
+값들을 키,값 형태로 전달 -> "children"으로 받음
+
+//===========08====================
+index.html: root -> index.js -> /app -> app.js
+ 
+==> link | app.js : css, js 번들 추가
+
+react springboot , react

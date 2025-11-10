@@ -1,5 +1,0 @@
-npx create-react-app 파일
-netstat -a -o
-taskkill /f /pid 프로세스id
-
-index.js  9 .11 . 마지막 -> 주석
